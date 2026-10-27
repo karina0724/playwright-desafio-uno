@@ -31,7 +31,7 @@ export default defineConfig({
     headless: HEADLESS,
     actionTimeout: environment.timeouts.action,
     navigationTimeout: environment.timeouts.navigation,
-    trace: "on",
+    trace: "retain-on-failure",
     screenshot: "only-on-failure",
     video: "retain-on-failure",
     viewport: { width: 1440, height: 900 },
