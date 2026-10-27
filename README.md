@@ -4,8 +4,8 @@ Suite de automatización E2E sobre [https://demoqa.com/books](https://demoqa.com
 
 | Propiedad | Valor |
 | --- | --- |
-| Framework | Playwright `^1.48` |
-| Lenguaje | TypeScript `^5.6` |
+| Framework | Playwright `^1.64.1` |
+| Lenguaje | TypeScript `^7.0.2` |
 | Patrón | Page Object Model + Fixtures custom |
 | BDD | Gherkin (archivos `.feature`) |
 | Reportes | Playwright HTML + JUnit |
