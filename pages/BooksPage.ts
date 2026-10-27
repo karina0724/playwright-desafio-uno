@@ -3,13 +3,11 @@ import { BasePage } from "./BasePage";
 import { environment } from "../config/environment";
 
 /**
- * BooksPage — Catálogo de libros de demoqa.com.
+ * BooksPage — Book catalog from demoqa.com.
  * URL: https://demoqa.com/books
  *
- * Nota: el sitio migró de ReactTable (.rt-table / .rt-tbody / .rt-noData)
- * a una tabla HTML nativa dentro de .books-wrapper, por lo que los selectores
- * se actualizaron para la nueva estructura. El estado vacío ya no muestra
- * "No rows found": se refleja con tbody sin filas y el paginador "Page 1 of 0".
+ * Note:
+ * "No rows found": reflected by an empty tbody and the paginator "Page 1 of 0".
  */
 export class BooksPage extends BasePage {
   readonly searchBox: Locator;
@@ -37,8 +35,6 @@ export class BooksPage extends BasePage {
 
   async searchByKeyword(keyword: string): Promise<void> {
     await this.fill(this.searchBox, keyword);
-    // Espera a que el paginador refleje el estado final (resultados o 0 resultados)
-    // sin usar sleeps fijos.
     await expect(this.pageInfo).toBeVisible();
     await expect(this.pageInfo).toHaveText(/Page\s+1\s+of\s+\d+/);
   }
@@ -56,17 +52,11 @@ export class BooksPage extends BasePage {
   async assertBookInResults(expectedTitle: string): Promise<void> {
     await this.waitForVisible(this.bookRows.first());
     const titles = await this.getVisibleBookTitles();
-    expect(titles, `Esperaba el libro "${expectedTitle}" en los resultados`).toContain(
+    expect(titles, `Expected the book "${expectedTitle}" in the results`).toContain(
       expectedTitle,
     );
   }
 
-  /**
-   * El rediseño del sitio eliminó el mensaje "No rows found".
-   * El estado vacío ahora se manifiesta como:
-   *   - tbody sin filas (0 resultados), y
-   *   - paginador en "Page 1 of 0".
-   */
   async assertNoResultsMessage(): Promise<void> {
     await expect(this.pageInfo).toHaveText(/Page\s+1\s+of\s+0/);
     await expect(this.bookRows).toHaveCount(0);

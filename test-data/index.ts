@@ -2,11 +2,11 @@ import usersRaw from "./users.json";
 import booksRaw from "./books.json";
 
 /**
- * Carga y resolución de datos de prueba.
+ * Test data loading and resolution.
  *
- * Las credenciales marcadas con el prefijo "FROM_ENV:" son resueltas
- * desde variables de entorno en tiempo de ejecución, para evitar
- * commitear secretos en el repositorio.
+ * Credentials prefixed with "FROM_ENV:" are resolved from
+ * environment variables at runtime, to avoid committing secrets
+ * to the repository.
  */
 
 export interface UserCredentials {
@@ -41,7 +41,7 @@ export interface TestData {
 }
 
 /**
- * Resuelve un valor "FROM_ENV:VAR_NAME" leyéndolo del process.env.
+ * Resolves a "FROM_ENV:VAR_NAME" value by reading it from process.env.
  */
 function resolveEnvValue(value: string): string {
   if (typeof value === "string" && value.startsWith("FROM_ENV:")) {

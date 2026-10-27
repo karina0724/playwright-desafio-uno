@@ -4,12 +4,12 @@ import { BooksPage } from "./BooksPage";
 import { ProfilePage } from "./ProfilePage";
 
 /**
- * App — Punto de entrada unificado a todos los Page Objects del sistema.
- * Se inyecta en los tests vía fixtures para que los specs no tengan que
- * instanciar manualmente cada página.
+ * App — Unified entry point to all Page Objects in the system.
+ * Injected into tests via fixtures so specs don't need to
+ * instantiate each page manually.
  *
- * Uso típico:
- *   test("algún caso", async ({ app }) => {
+ * Typical usage:
+ *   test("some case", async ({ app }) => {
  *     await app.login.open();
  *     await app.login.login(credentials);
  *     await app.books.open();

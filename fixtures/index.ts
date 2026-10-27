@@ -3,11 +3,11 @@ import { App } from "../pages/App";
 import { data, TestData } from "../test-data";
 
 /**
- * Fixture custom que extiende el test base de Playwright con:
- *   - `app`: punto de entrada a todos los Page Objects
- *   - `data`: datos de prueba resueltos (con variables de entorno aplicadas)
+ * Custom fixture that extends Playwright's base test with:
+ *   - `app`: entry point to all Page Objects
+ *   - `data`: resolved test data (with environment variables applied)
  *
- * Esto permite que los specs se mantengan declarativos:
+ * This keeps specs declarative:
  *   test("...", async ({ app, data }) => {
  *     await app.login.open();
  *     await app.login.login(data.users.validUser);

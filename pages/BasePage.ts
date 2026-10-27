@@ -1,9 +1,9 @@
 import { Locator, Page, expect } from "@playwright/test";
 
 /**
- * BasePage — contrato base para todos los Page Objects.
- * Encapsula helpers de sincronización y acciones comunes para
- * evitar sleeps fijos y centralizar el manejo de esperas explícitas.
+ * BasePage — base contract for all Page Objects.
+ * Encapsulates synchronization helpers and common actions to
+ * avoid fixed sleeps and centralize explicit wait handling.
  */
 export abstract class BasePage {
   protected readonly page: Page;
@@ -12,39 +12,39 @@ export abstract class BasePage {
     this.page = page;
   }
 
-  /** Navega a una ruta relativa al baseURL. */
+  /** Navigates to a path relative to the baseURL. */
   protected async goto(path: string): Promise<void> {
     await this.page.goto(path, { waitUntil: "domcontentloaded" });
   }
 
-  /** Click con espera explícita a que el locator sea accionable. */
+  /** Click with an explicit wait for the locator to become actionable. */
   protected async click(locator: Locator): Promise<void> {
     await locator.waitFor({ state: "visible" });
     await locator.click();
   }
 
-  /** Llenado seguro: espera visibilidad, limpia y escribe. */
+  /** Safe fill: waits for visibility, clears and types. */
   protected async fill(locator: Locator, value: string): Promise<void> {
     await locator.waitFor({ state: "visible" });
     await locator.fill(value);
   }
 
-  /** Espera a que un locator sea visible dentro del timeout por defecto. */
+  /** Waits for a locator to become visible within the default timeout. */
   protected async waitForVisible(locator: Locator, timeout?: number): Promise<void> {
     await locator.waitFor({ state: "visible", timeout });
   }
 
-  /** Espera a que un locator se oculte dentro del timeout por defecto. */
+  /** Waits for a locator to become hidden within the default timeout. */
   protected async waitForHidden(locator: Locator, timeout?: number): Promise<void> {
     await locator.waitFor({ state: "hidden", timeout });
   }
 
-  /** Devuelve true/false según visibilidad actual, sin lanzar excepción. */
+  /** Returns true/false based on current visibility, without throwing. */
   protected async isVisible(locator: Locator): Promise<boolean> {
     return locator.isVisible().catch(() => false);
   }
 
-  /** Verifica que la URL actual contenga el fragmento esperado. */
+  /** Asserts the current URL contains the expected fragment. */
   async assertUrlContains(fragment: string): Promise<void> {
     await expect(this.page).toHaveURL(new RegExp(fragment));
   }

@@ -3,7 +3,7 @@ import { BasePage } from "./BasePage";
 import { environment } from "../config/environment";
 
 /**
- * ProfilePage — Página del perfil del usuario autenticado.
+ * ProfilePage — Authenticated user's profile page.
  * URL: https://demoqa.com/profile
  */
 export class ProfilePage extends BasePage {

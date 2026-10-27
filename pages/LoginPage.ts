@@ -8,7 +8,7 @@ export interface Credentials {
 }
 
 /**
- * LoginPage — Página de autenticación de demoqa.com.
+ * LoginPage — Authentication page of demoqa.com.
  * URL: https://demoqa.com/login
  */
 export class LoginPage extends BasePage {

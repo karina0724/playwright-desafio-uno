@@ -2,9 +2,9 @@ import * as fs from "fs";
 import * as path from "path";
 
 /**
- * Loader de configuración por ambiente.
- * Lee el archivo JSON correspondiente a TEST_ENV y expone un objeto tipado
- * para el resto del proyecto.
+ * Per-environment configuration loader.
+ * Reads the JSON file corresponding to TEST_ENV and exposes a typed object
+ * for the rest of the project.
  */
 
 export interface EnvironmentConfig {
