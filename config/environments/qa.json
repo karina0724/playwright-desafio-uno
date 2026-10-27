@@ -1,0 +1,13 @@
+{
+  "name": "QA",
+  "baseUrl": "https://demoqa.com",
+  "loginPath": "/login",
+  "booksPath": "/books",
+  "profilePath": "/profile",
+  "apiPath": "/Account/v1",
+  "timeouts": {
+    "default": 20000,
+    "navigation": 40000,
+    "action": 20000
+  }
+}

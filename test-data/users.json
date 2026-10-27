@@ -1,0 +1,14 @@
+{
+  "validUser": {
+    "username": "FROM_ENV:USER_NAME",
+    "password": "FROM_ENV:USER_PASSWORD"
+  },
+  "invalidUser": {
+    "username": "FROM_ENV:INVALID_USER_NAME",
+    "password": "FROM_ENV:INVALID_PASSWORD"
+  },
+  "emptyUser": {
+    "username": "",
+    "password": ""
+  }
+}

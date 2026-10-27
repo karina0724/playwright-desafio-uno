@@ -1,0 +1,25 @@
+{
+  "existingKeyword": {
+    "keyword": "JavaScript",
+    "expectedTitles": [
+      "Learning JavaScript Design Patterns",
+      "Speaking JavaScript",
+      "You Don't Know JS",
+      "Programming JavaScript Applications",
+      "Eloquent JavaScript, Second Edition",
+      "Understanding ECMAScript 6"
+    ]
+  },
+  "existingSingleResult": {
+    "keyword": "Git Pocket Guide",
+    "expectedTitle": "Git Pocket Guide"
+  },
+  "istqbKeyword": {
+    "keyword": "ISTQB Fundamentals",
+    "comment": "Palabra clave sugerida por el enunciado. En el catálogo real de demoqa.com/books no existe este libro, por lo que se usa para validar comportamiento de búsqueda sin resultados.",
+    "expectedBehavior": "noResults"
+  },
+  "nonExistingKeyword": {
+    "keyword": "xyz-non-existing-book-123"
+  }
+}

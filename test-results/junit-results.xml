@@ -1,0 +1,48 @@
+<testsuites id="" name="" tests="6" failures="0" skipped="0" errors="0" time="4.958457999999999">
+<testsuite name="login.spec.ts" timestamp="2026-10-27T04:46:43.152Z" hostname="auth" tests="2" failures="0" skipped="0" time="8.32" errors="0">
+<testcase name="@auth demoqa.com - Autenticación › LOG-001: Login exitoso con credenciales válidas @smoke @positive" classname="login.spec.ts" time="3.891">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|login--auth-demoqa-com---A-5418f-ales-válidas-smoke-positive-auth/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="@auth demoqa.com - Autenticación › LOG-002: Login fallido con credenciales inválidas @negative" classname="login.spec.ts" time="4.429">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|login--auth-demoqa-com---A-431e9-enciales-inválidas-negative-auth/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="book-search.spec.ts" timestamp="2026-10-27T04:46:43.152Z" hostname="books" tests="4" failures="0" skipped="0" time="8.537" errors="0">
+<testcase name="@books demoqa.com - Búsqueda de libros › BOOK-001: Búsqueda con palabra clave existente retorna coincidencias @smoke @positive" classname="book-search.spec.ts" time="2.178">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|book-search--books-demoqa--8d73a-oincidencias-smoke-positive-books/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="@books demoqa.com - Búsqueda de libros › BOOK-002: Búsqueda por título exacto retorna el libro esperado @positive" classname="book-search.spec.ts" time="2.278">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|book-search--books-demoqa--24b94--el-libro-esperado-positive-books/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="@books demoqa.com - Búsqueda de libros › BOOK-003: Búsqueda por &apos;ISTQB Fundamentals&apos; (no existe en el catálogo real) muestra estado vacío @negative" classname="book-search.spec.ts" time="2.043">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|book-search--books-demoqa--d4d19-estra-estado-vacío-negative-books/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="@books demoqa.com - Búsqueda de libros › BOOK-004: Búsqueda con palabra clave inexistente muestra estado vacío @negative" classname="book-search.spec.ts" time="2.038">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|book-search--books-demoqa--f75d2-estra-estado-vacío-negative-books/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

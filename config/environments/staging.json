@@ -1,0 +1,13 @@
+{
+  "name": "Staging",
+  "baseUrl": "https://demoqa.com",
+  "loginPath": "/login",
+  "booksPath": "/books",
+  "profilePath": "/profile",
+  "apiPath": "/Account/v1",
+  "timeouts": {
+    "default": 15000,
+    "navigation": 45000,
+    "action": 20000
+  }
+}
